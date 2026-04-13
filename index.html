@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IHA 2026 | Vikki S. Small | Stress-Testing a Voice-Ready Pediatric Obesity Intake Workflow to Reduce Health Literacy Burden in Safety-Net Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #06113D;
+    --navy-light: #EEF0F7;
+    --cream: #FDFBF6;
+    --cream-dark: #F0EDE5;
+    --orange: #C44B1B;
+    --orange-light: #FAE6DF;
+    --stone: #3A3A38;
+    --stone-light: #6B6B66;
+    --border: #D8D4CC;
+    --text: #1E1E1C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* Hero */
+  .hero {
+    background: var(--navy);
+    color: white;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+
+  .conference-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.25;
+    max-width: 760px;
+    margin: 0 auto 1.5rem;
+    color: white;
+  }
+
+  .hero-author {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.35rem;
+  }
+
+  .hero-affil {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Nav */
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 1.25rem 2rem;
+    background: var(--navy);
+    border-bottom: 3px solid var(--orange);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-pill {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    padding: 5px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    letter-spacing: 0.04em;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .nav-pill:hover {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+  }
+
+  /* Container */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  /* Section */
+  .section {
+    background: white;
+    border-radius: 10px;
+    border-top: 4px solid #C44B1B;
+    padding: 2.5rem 2.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .section:last-child { margin-bottom: 0; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.75rem;
+  }
+
+  .section h2 {
+    font-family: 'Lora', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* Text blocks — modern, airy */
+  .section p {
+    font-size: 16px;
+    color: var(--stone);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  /* Callout — bold left border, airy */
+  .callout {
+    background: var(--orange-light);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--stone);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  /* Workflow */
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin: 2rem 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .wf-step {
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    background: white;
+    position: relative;
+  }
+
+  .wf-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .wf-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .wf-desc {
+    font-size: 14px;
+    color: var(--stone-light);
+    line-height: 1.5;
+  }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin: 2rem 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .stat {
+    background: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Lora', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: #C44B1B;
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 15px;
+    color: var(--stone-light);
+    margin-top: 10px;
+    display: block;
+    line-height: 1.4;
+  }
+
+  /* Next card */
+  .next-card {
+    background: var(--orange-light);
+    border: 1px solid #C44B1B;
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+    max-width: 680px;
+  }
+
+  .next-card p {
+    font-size: 15px;
+    color: var(--stone);
+    margin-bottom: 0.75rem;
+    max-width: none;
+  }
+
+  .next-card p:last-child { margin-bottom: 0; }
+
+  /* References */
+  .ref-list {
+    list-style: none;
+    max-width: 680px;
+  }
+
+  .ref-list li {
+    font-size: 16px;
+    color: var(--stone);
+    line-height: 1.75;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ref-list li:last-child { border-bottom: none; }
+
+  /* Connect */
+  .connect-box {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .connect-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.85rem;
+  }
+
+  .connect-box p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 1.75rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .connect-link {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.15s;
+  }
+
+  .connect-link:hover { opacity: 0.85; }
+
+  .connect-link.secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--navy);
+    border-top: 3px solid var(--orange);
+    padding: 2rem;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 700px) {
+    .workflow { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .connect-links { flex-direction: column; align-items: center; }
+    .section h2 { font-size: 28px; }
+    .stat-num { font-size: 42px; }
+    .stat-label { font-size: 13px; }
+    .section { padding: 2rem 1.25rem; }
+    .container { padding: 1.5rem 1rem 3rem; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero h1 { font-size: 24px; }
+    .nav-pills { padding: 0.85rem 1rem; gap: 6px; }
+    .nav-pill { font-size: 11px; padding: 4px 10px; }
+  }
+
+  @media (max-width: 420px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 36px; }
+    .workflow { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="conference-badge">IHA Health Literacy Conference &bull; May 12&ndash;14, 2026</div>
+  <h1>Stress-Testing a Voice-Ready Pediatric Obesity Intake Workflow to Reduce Health Literacy Burden in Safety-Net Care</h1>
+  <p class="hero-author">Vikki S. Small, MPH, LSSGB, PMP, CSM</p>
+  <p class="hero-affil">DrPH Student &bull; SUNY Downstate School of Public Health &bull; Brooklyn, NY</p>
+</div>
+
+<nav class="nav-pills">
+  <a class="nav-pill" href="#problem">The Problem</a>
+  <a class="nav-pill" href="#approach">Our Approach</a>
+  <a class="nav-pill" href="#testing">How We Tested It</a>
+  <a class="nav-pill" href="#results">Results</a>
+  <a class="nav-pill" href="#practice">For Practice</a>
+  <a class="nav-pill" href="#next">Next Steps</a>
+  <a class="nav-pill" href="#references">References</a>
+  <a class="nav-pill" href="#connect">Connect</a>
+</nav>
+
+<div class="container">
+
+  <div class="section" id="problem">
+    <div class="section-tag">The Problem</div>
+    <h2>Many clinical intake forms were never designed for the families completing them</h2>
+    <p>Black and Latino caregivers in safety-net pediatric clinics often struggle to complete written intake forms. This reflects reading level, time pressure, and limited access to digital tools.</p>
+    <div class="callout">Nearly 1 in 4 non-Hispanic Black adults has below basic health literacy, compared to 9% of non-Hispanic White adults, and federal data show that Black and Hispanic adults use health information technology less often than their White peers.</div>
+    <p>These gaps are not about families' abilities. This is a design problem, not a family problem. They reflect structural inequities in how health tools are designed and who they are designed for. In pediatric obesity care, these barriers can lead to incomplete intake forms and more time spent during visits correcting paperwork rather than focusing on counseling and care planning (James et al., 2023).</p>
+  </div>
+
+  <div class="section" id="approach">
+    <div class="section-tag">Our Approach</div>
+    <h2>Designing an intake workflow for how caregivers actually communicate</h2>
+    <p>Working with Live Light Live Right (LLLR), a community-based pediatric obesity program in Brooklyn, we redesigned 19 intake questions. We aimed for a 6th grade reading level and adapted every question so it could be used in a conversational, voice-based tool.</p>
+    <p>We checked plain language quality using the CDC Clear Communication Index (CDC, 2019) and got a score of 94 out of 100. The scenarios were based on published qualitative research that describes how Brooklyn families in weight management care talk about their lives, challenges, and communication needs (Browne et al., 2022).</p>
+    <p>The workflow was designed to match how caregivers actually speak. It accepts rough estimates, short stories, and everyday number phrases instead of demanding exact or perfectly formatted answers. The goal was a tool designed for the families who will use it, rather than an idealized user that health systems often assume they are serving.</p>
+  </div>
+
+  <div class="section" id="testing">
+    <div class="section-tag">How We Tested It</div>
+    <h2>A four-step testing cycle: Design &rarr; Simulate &rarr; Evaluate &rarr; Refine</h2>
+
+    <div class="workflow">
+      <div class="wf-step">
+        <span class="wf-num">Step 1</span>
+        <span class="wf-label">Design</span>
+        <span class="wf-desc">19 questions rewritten in natural language at 6th grade level</span>
+      </div>
+      <div class="wf-step">
+        <span class="wf-num">Step 2</span>
+        <span class="wf-label">Simulate</span>
+        <span class="wf-desc">31 scripted scenarios based on published qualitative research</span>
+      </div>
+      <div class="wf-step">
+        <span class="wf-num">Step 3</span>
+        <span class="wf-label">Evaluate</span>
+        <span class="wf-desc">Completion rate, rule fidelity, edge case identification</span>
+      </div>
+      <div class="wf-step">
+        <span class="wf-num">Step 4</span>
+        <span class="wf-label">Refine</span>
+        <span class="wf-desc">Targeted rule updates verified through re-testing</span>
+      </div>
+    </div>
+
+    <p>Testing was conducted using Vertex AI, a cloud-based platform that supports the development and evaluation of conversational workflows. The platform was used to run each scripted scenario, capture how the workflow responded to varied caregiver inputs, and identify where decision logic broke down.</p>
+    <p>No families participated, no patient data were used, and the workflow was not connected to any clinical system.</p>
+    <div class="callout">The testing framework itself is platform-agnostic. While Vertex AI was used for this proof-of-concept, the same scripted scenario testing approach can be implemented using a range of conversational development tools. This allows teams to identify design and communication issues early, helping ensure that literacy-sensitive intake tools function as intended before families encounter them in real clinical settings.</div>
+  </div>
+
+  <div class="section" id="results">
+    <div class="section-tag">Results</div>
+    <h2>All 31 scenarios completed. Zero dead ends.</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">31</span>
+        <span class="stat-label">Scripted scenarios completed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">19</span>
+        <span class="stat-label">Intake questions redesigned</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Workflow completion, zero dead ends</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">95%</span>
+        <span class="stat-label">Decision rule accuracy across simulated caregiver responses</span>
+      </div>
+    </div>
+
+    <p>All planned feasibility targets were met. Two design gaps were identified, both related to how the workflow handled numbers, and neither reflected caregiver misunderstanding or a system failure.</p>
+    <p>In the first, the workflow accepted fractional numbers when a whole-number estimate was needed for data consistency. We fixed this by adding a short, plain-language follow-up question instead of rejecting the caregiver's answer. In the second, the workflow accepted very unlikely values without checking them. We fixed this by adding a gentle range check that asks the caregiver to confirm their answer, instead of showing an error.</p>
+    <p>After these changes and re-testing, the workflow stayed conversational and focused on the caregiver's experience throughout.</p>
+  </div>
+
+  <div class="section" id="practice">
+    <div class="section-tag">What This Means for Practice</div>
+    <h2>This framework is designed to travel</h2>
+    <p>Literacy-aligned intake redesign is possible even in small, under-resourced safety-net clinics. It does not require a large IT team or expensive technology. Testing the workflow in advance with scripted scenarios is a practical, low-risk way to find and fix design problems before families ever see the tool.</p>
+    <p>Building questions that accept how caregivers naturally talk, including estimates, short stories, and everyday language, can lower burden without losing the clinical details providers need.</p>
+    <div class="callout">This approach is built to travel: clinics can adapt it to other safety-net settings, other chronic conditions, and other groups whose usual ways of communicating have often been treated as a problem to fix instead of a design requirement to respect.</div>
+    <p>This work supports IHA's mission to improve health literacy by redesigning intake tools to meet caregivers where they are, in plain language and in their own communication style.</p>
+  </div>
+
+  <div class="section" id="next">
+    <div class="section-tag">Next Steps</div>
+    <h2>From proof-of-concept to community pilot testing</h2>
+    <div class="next-card">
+      <p>This proof-of-concept sets the stage for a community-based pilot with English-speaking families enrolled in Live Light Live Right. In this first pilot, we will test the English workflow only and evaluate caregiver acceptability and workflow efficiency with approximately 30 families.</p>
+      <p>In future phases, we plan to adapt and test the workflow in Spanish and Haitian Kreyol so it better reflects the languages spoken in the Brooklyn communities we serve.</p>
+      <p>Practitioners who want to adapt this approach in their own safety-net settings are invited to connect to share tools, lessons learned, and implementation support.</p>
+    </div>
+  </div>
+
+  <div class="section" id="references">
+    <div class="section-tag">References</div>
+    <ul class="ref-list">
+      <li>Browne VR, Bruno DM, Dhuper S, Afable A. Insights into the challenges and facilitators to physical activity among Brooklyn teens enrolled in a weight management programme. <em>Health Expect.</em> 2022;25(4):1832&ndash;1843.</li>
+      <li>Centers for Disease Control and Prevention. CDC Clear Communication Index: User Guide. Atlanta, GA: CDC; 2019.</li>
+      <li>James A, Afable A, Bayoumi N, Dhuper S. Evaluation of a childhood obesity program serving a high-need population in Brooklyn, NY using survival analysis. <em>Int J Environ Res Public Health.</em> 2023;20(9):5723.</li>
+      <li>National Center for Health Statistics. Health information technology use among adults: United States. NCHS Data Brief No. 482. CDC; 2023.</li>
+      <li>U.S. Department of Health and Human Services, Office of Disease Prevention and Health Promotion. Health Literacy in Healthy People 2030. Washington, DC: HHS ODPHP; 2020. Accessed March 13, 2026. https://health.gov/healthypeople/priority-areas/social-determinants-health/literature-summaries/health-literacy</li>
+      <li>U.S. Department of Health and Human Services, Office of Minority Health. Advancing Better Health for Black and African American Communities: Health Literacy Reading List. Washington, DC: HHS OMH; 2024. Available at: https://www.hhs.gov/black-history-month/reading-list/index.html</li>
+    </ul>
+  </div>
+
+  <div class="section" id="connect">
+    <div class="section-tag">Connect</div>
+    <div class="connect-box">
+      <h3>Interested in adapting or testing this framework in your safety-net setting?</h3>
+      <p>Want to share tools, ask questions, or follow the pilot? Reach out directly.</p>
+      <div class="connect-links">
+        <a class="connect-link" href="mailto:Vikki.Small@downstate.edu">Email Me</a>
+        <a class="connect-link secondary" href="https://linkedin.com/in/vikkissmall">LinkedIn</a>
+        <a class="connect-link secondary" href="https://vikkismall.com">vikkismall.com</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>The author thanks Dr. Aimee Afable, PhD, MPH (SUNY Downstate School of Public Health) and Dr. Sarita Dhuper, MD (Live Light Live Right) for their guidance and support of this work.</p>
+  <p style="margin-top:6px;">Research sup
