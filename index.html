@@ -336,6 +336,38 @@
     border: 1px solid rgba(255,255,255,0.3);
   }
 
+  /* Acknowledgments */
+  .acknowledgments {
+    background: #2C3E6B;
+    border-top: 3px solid var(--orange);
+    padding: 2.5rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .ack-block {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .ack-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+
+  .ack-block p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+  }
+
   /* Footer */
   .footer {
     background: var(--navy);
@@ -394,7 +426,7 @@
   <div class="section" id="problem">
     <div class="section-tag">The Problem</div>
     <h2>Many clinical intake forms were never designed for the families completing them</h2>
-    <p>Black and Latino caregivers in safety-net pediatric clinics often struggle to complete written intake forms. This reflects reading level, time pressure, and limited access to digital tools.</p>
+    <p>Black and Latino caregivers in safety-net pediatric clinics often struggle to complete written intake forms. This reflects reading level, time pressure, and limited access to digital tools, not a lack of effort or ability.</p>
     <div class="callout">Nearly 1 in 4 non-Hispanic Black adults has below basic health literacy, compared to 9% of non-Hispanic White adults, and federal data show that Black and Hispanic adults use health information technology less often than their White peers.</div>
     <p>These gaps are not about families' abilities. This is a design problem, not a family problem. They reflect structural inequities in how health tools are designed and who they are designed for. In pediatric obesity care, these barriers can lead to incomplete intake forms and more time spent during visits correcting paperwork rather than focusing on counseling and care planning (James et al., 2023).</p>
   </div>
@@ -458,7 +490,7 @@
       </div>
       <div class="stat">
         <span class="stat-num">95%</span>
-        <span class="stat-label">Decision rule accuracy across simulated caregiver responses</span>
+        <span class="stat-label">Decision rule accuracy — workflow correctly interpreted and routed caregiver responses</span>
       </div>
     </div>
 
@@ -472,8 +504,8 @@
     <h2>This framework is designed to travel</h2>
     <p>Literacy-aligned intake redesign is possible even in small, under-resourced safety-net clinics. It does not require a large IT team or expensive technology. Testing the workflow in advance with scripted scenarios is a practical, low-risk way to find and fix design problems before families ever see the tool.</p>
     <p>Building questions that accept how caregivers naturally talk, including estimates, short stories, and everyday language, can lower burden without losing the clinical details providers need.</p>
-    <div class="callout">This approach is built to travel: clinics can adapt it to other safety-net settings, other chronic conditions, and other groups whose usual ways of communicating have often been treated as a problem to fix instead of a design requirement to respect.</div>
-    <p>This work supports IHA's mission to improve health literacy by redesigning intake tools to meet caregivers where they are, in plain language and in their own communication style.</p>
+    <div class="callout">This approach is built to travel. Clinics can adapt it to other safety-net settings, other conditions, and other populations whose communication styles are often treated as a problem instead of a design requirement.</div>
+    <p>This work aligns with efforts to improve health literacy by designing intake tools that reflect how caregivers communicate.</p>
   </div>
 
   <div class="section" id="next">
@@ -506,12 +538,24 @@
       <div class="connect-links">
         <a class="connect-link" href="mailto:Vikki.Small@downstate.edu">Email Me</a>
         <a class="connect-link secondary" href="https://linkedin.com/in/vikkissmall">LinkedIn</a>
-              </div>
+        <a class="connect-link secondary" href="https://vikkismall.com">vikkismall.com</a>
+      </div>
     </div>
   </div>
 
 </div>
 
-<div class="footer">
-  <p>The author thanks Dr. Aimee Afable, PhD, MPH (SUNY Downstate School of Public Health) and Dr. Sarita Dhuper, MD (Live Light Live Right) for their guidance and support of this work.</p>
-  <p style="margin-top:6px;">Research sup
+<div class="acknowledgments">
+  <div class="ack-block">
+    <div class="ack-label">Limitations (Methodological Context)</div>
+    <p>This simulation was conducted by a single tester. Future phases will include independent testers to validate workflow performance and reduce bias.</p>
+  </div>
+  <div class="ack-block">
+    <div class="ack-label">Acknowledgments</div>
+    <p>The author thanks Dr. Aimee Afable, PhD, MPH (SUNY Downstate School of Public Health) and Dr. Sarita Dhuper, MD (Live Light Live Right) for their guidance and support of this work.</p>
+  </div>
+  <div class="ack-block">
+    <div class="ack-label">Funding</div>
+    <p>Research supported in part by SUNY System Administration using the SUNY AI Platform.</p>
+  </div>
+</div>
